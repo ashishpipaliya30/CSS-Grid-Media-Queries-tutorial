@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS grid + media queries</title>
+</head>
+<style>
+    .container {
+        display: grid;
+        grid-gap: 1rem;
+        grid-template-areas:
+            'navbar navbar navbar navbar'
+            'section section section aside'
+            'footer footer footer footer';
+    }
+
+    @media only screen and (max-width:300px) {
+        body {
+            background-color: blue;
+        }
+        aside{
+            display: none;
+        }
+        span{
+            display: block;
+            text-align: center;
+        }
+        .container {
+            grid-template-areas:
+                'navbar navbar navbar navbar'
+                'section section section section'
+                'aside aside aside aside'
+                'footer footer footer footer';
+        }
+    }
+
+    @media only screen and (min-width:300px) and (max-width:500px) {
+        body {
+            background-color: red;
+        }
+        .container {
+            grid-template-areas:
+                'navbar navbar navbar navbar'
+                'section section section section'
+                'aside aside aside aside'
+                'footer footer footer footer';
+        }
+        aside{
+            display: none;
+        }
+
+        span{
+            display: block;
+            text-align: center;
+        }
+    }
+
+    @media (min-width:500px) and (max-width:800px) {
+        body {
+            background-color: green;
+        }
+
+        .container {
+            grid-template-areas:
+                'navbar navbar navbar navbar'
+                'section section section section'
+                'aside aside aside aside'
+                'footer footer footer footer';
+        }
+    }
+
+    @media (min-width:800px) {
+        body {
+            background-color: rgb(30, 9, 114);
+        }
+    }
+
+    .bdr {
+        border: 2px solid skyblue;
+        padding: 10px 23px;
+        color: white;
+        background-color: rgb(4, 4, 68);
+    }
+
+    nav {
+        grid-area: navbar;
+        text-align: center;
+    }
+
+    section {
+        grid-area: section;
+    }
+
+    aside {
+        grid-area: aside;
+    }
+
+    footer {
+        grid-area: footer;
+        text-align: center;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <nav class="bdr">
+            <span>Home</span>
+            <span>About</span>
+            <span>Contact us</span>
+        </nav>
+        <section class="bdr">
+            <h2>Learn css in hindi</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Necessitatibus aspernatur quisquam, corrupti minus, libero at eaque, dolores distinctio nulla rerum officiis? Quia, architecto ratione fuga dicta sit repudiandae voluptatum ipsum voluptatibus repellendus laboriosam distinctio eum ducimus, soluta optio dolorem? Totam consequuntur libero iste. Facilis dicta debitis iusto, amet adipisci cum nemo omnis maxime ut explicabo nobis obcaecati quod necessitatibus aperiam rerum facere atque odio repellendus vitae nam, autem nisi, quaerat expedita? Obcaecati vitae quod rerum, pariatur quibusdam corporis aperiam veritatis tempore labore, fuga deserunt reiciendis accusantium mollitia consequatur autem tenetur repellat incidunt? Hic aspernatur quos blanditiis esse beatae praesentium eos reprehenderit est atque neque id, molestiae, ratione porro quo doloribus consequuntur quidem, architecto autem rerum sequi natus a quasi. Aperiam facilis id inventore provident delectus, porro necessitatibus itaque similique eos minus cum eaque facere, aspernatur accusamus possimus dicta. Quas laborum ipsum, ab dolorum quia fugit nam culpa facere quasi, omnis ad repudiandae eius iste sequi sint nisi placeat animi autem odio. Eum reiciendis fugiat libero corrupti, quam facilis est enim excepturi voluptate inventore modi laudantium saepe, veritatis labore! Aperiam aspernatur voluptatum doloribus velit earum nemo perferendis laborum quod ex accusamus incidunt similique autem libero, pariatur debitis et? Totam fugiat sapiente error voluptas dolorum laboriosam sint, facilis, nesciunt aliquid atque beatae dignissimos at rem. Aspernatur, laudantium vitae? Quam architecto porro tempora eos quod.</p>
+        </section>
+        <aside class="bdr">
+            <h1>More about us</h1>
+        </aside>
+    </div>
+    <footer class="bdr">copyright Ashish Pipaliya</footer>
+</body>
+
+</html>
